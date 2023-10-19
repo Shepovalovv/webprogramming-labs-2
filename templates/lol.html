@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block main%}
+    <h1>Персонажи League of Legends</h1>
+
+    <h2>Urgot</h2>
+    <img src ="{{url_for('static', filename = 'urgot.jpeg')}}" style="width: 80%; height: 80%; " >
+    <div style="font-size: 130%;">
+        Эта ходячая многоножка представляет Заун. В каждом колене
+        у него располагается дробовик, который наносит усиленный выстрел
+    </div>
+
+
+    <h2>Mordekaiser</h2>
+    <img src ="{{url_for('static', filename = 'mordekaiser.jpg')}}" style="width: 80%; height: 80%;">
+    <div style="font-size: 130%;">
+        Владыка смерти, дважды убитый, трижды воскресший. При нанесении трёх автоатак,
+        вокруг него появляется аура смерти, которая наносит урон врагам вокруг
+    </div>
+
+
+    <h2>Illaoi</h2>
+    <img src ="{{url_for('static', filename = 'illaoi.jpeg')}}" style="width: 80%; height: 80%;">
+    <div style="font-size: 130%;">
+        Физическая сила Иллаой уступает только силе ее веры. Будучи пророчицей Матери Глубин, она 
+        использует огромного золотого идола, чтобы вытягивать души врагов из их тел и разбивать их 
+        представления о реальности.
+    </div>
+
+
+    <h2>Briar</h2>
+    <img src ="{{url_for('static', filename = 'briar.jpg')}}" style="width: 80%; height: 80%;">
+    <div style="font-size: 130%;">
+        Самый новый персонаж в Лиге легенд. 
+        Вампир, которая при виде крови впадает в бешенство
+    </div>
+
+
+    <h2>Alistar</h2>
+    <img src ="{{url_for('static', filename = 'alistar.jpg')}}" style="width: 80%; height: 80%;">
+    <div style="font-size: 130%;">
+        Один из самых старых персонажей в лиге легенд. Бык, вечно кричащий:
+        "Эээй, это не для дойки!"
+    </div>
+    
+{% endblock%}
