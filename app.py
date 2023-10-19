@@ -138,7 +138,7 @@ def example():
     name = "Шеповалов Артём Сергеевич"
     labnumber = "Лабораторная работа 2"
     group = "ФБИ-11"
-    kurs = "3 курс"
-    return render_template('example.html', name = name, labnumber = labnumber, group = group, kurs = kurs)
+    cource = "3 курс"
+    return render_template('example.html', name = name, labnumber = labnumber, group = group, cource = cource)
 
 
