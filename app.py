@@ -134,4 +134,5 @@ def LoL():
 '''
 @app.route('/lab2/example')
 def example():
-    return render_template('example.html')
+    name = "Шеповалов Артём Сергеевич"
+    return render_template('example.html', name = name)
