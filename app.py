@@ -137,7 +137,7 @@ def LoL():
 def example():
     name = "Шеповалов Артём Сергеевич"
     labnumber = "Лабораторная работа 2"
-    group = "Фби-11"
+    group = "ФБИ-11"
     kurs = "3 курс"
     return render_template('example.html', name = name, labnumber = labnumber, group = group, kurs = kurs)
 
