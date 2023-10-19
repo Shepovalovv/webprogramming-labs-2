@@ -132,7 +132,13 @@ def LoL():
     </body>
 <html>
 '''
+
 @app.route('/lab2/example')
 def example():
     name = "Шеповалов Артём Сергеевич"
-    return render_template('example.html', name = name)
+    labnumber = "Лабораторная работа 2"
+    group = "Фби-11"
+    kurs = "3 курс"
+    return render_template('example.html', name = name, labnumber = labnumber, group = group, kurs = kurs)
+
+
