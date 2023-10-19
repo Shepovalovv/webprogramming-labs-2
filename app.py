@@ -135,9 +135,15 @@ def LoL():
 
 @app.route('/lab2/example')
 def example():
-    name = "Шеповалов Артём Сергеевич"
-    labnumber = "Лабораторная работа 2"
-    group = "ФБИ-11"
-    cource = "3 курс"
-    return render_template('example.html', name = name, labnumber = labnumber, group = group, cource = cource)
+    name, labnumber, group, cource = "Шеповалов Артём Сергеевич", 2, "ФБИ-11", "3 курс"
+    fruits = [
+    {'name': 'яблоки', 'price': 100},
+     {'name': 'груши', 'price': 120}, 
+     {'name': 'апельсины', 'price': 80}, 
+     {'name': 'мандарины', 'price': 95}, 
+     {'name': 'манго', 'price': 95}
+     ]
+    return render_template('example.html',
+                            name = name, labnumber = labnumber, group = group, 
+                            cource = cource, fruits = fruits)
 
