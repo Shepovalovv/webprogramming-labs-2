@@ -22,7 +22,11 @@ def menu():
 
         <ul>
             <li>
-            <a href = '/lab1' target = _blank>Первая Лабораторная работа</a>
+                <a href = '/lab1' target = _blank>Первая Лабораторная работа</a>
+            </li>
+
+            <li>
+                <a href = '/lab2' target = _blank>Вторая Лабораторная работа</a>
             </li>
         </ul>
 
