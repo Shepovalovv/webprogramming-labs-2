@@ -141,4 +141,3 @@ def example():
     cource = "3 курс"
     return render_template('example.html', name = name, labnumber = labnumber, group = group, cource = cource)
 
-
