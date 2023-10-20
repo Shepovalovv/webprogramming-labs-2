@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block lab %}Лабораторная работа 3{% endblock %}
+
+{% block main%}
+
+
+    <h1>Покупка билета</h1>
+        
+    <form action="/lab3/final">
+        <label>ФИО пассажира:</label>
+        <div>
+            <input type="text" placeholder="ФИО" name = "user" value="{{ user or ''}}">
+            <span class="error">{{ errors.user }}</span>
+        </div> 
+        <label>Тип билета</label>
+        <div>
+        <label>
+            <input type="radio" value="child" name = "ticket" checked> Детский
+        </label>
+        <label>
+            <input type="radio" value="man" name = "ticket" checked> Взрослый
+        </label>
+        </div>
+        <label>Полка</label>
+        <div>
+            <select name = "polka">
+                <option value="lower" {{ polka == 'lower' and 'selected' }}>Нижняя</option>
+                <option value="upper" {{ polka == 'upper' and 'selected' }} >Верхняя</option>
+                <option value="upper side" {{ polka == 'upper side' and 'selected' }} >Верхняя боковая</option>
+                <option value="lower side" {{ polka == 'lower side' and 'selected' }} >Нижняя боковая</option>
+            </select>
+        </div>
+        <label>Багаж</label>
+        <div>
+            <select name = 'baggage'>
+                <option value="with" {{ polka == 'with' and 'selected' }}>С багажом</option>
+                <option value="without" {{ polka == 'without' and 'selected' }}>Без багажа</option>
+            </select>
+        </div>
+        <label>Возраст</label>
+        <div>
+            <input type="number" placeholder="Сколько вам лет?" name="age" min ='18' max="120" value="{{ age or '' }}">
+            <span class="error">{{ errors.age }}</span>
+        </div>
+        <label>Пункт Выезда</label>
+        <div>
+            <input type="text" placeholder="Пункт Выезда" name = "exitt" value="{{ exitt or ''}}">
+            <span class="error">{{ errors.exitt }}</span>
+        </div>
+        <label>Пункт Назначения</label>
+        <div>
+            <input type="text" placeholder="Пункт Назначения" name = "finish"  value="{{ finish or ''}}">
+            <span class="error">{{ errors.finish }}</span>
+        </div>
+        <label>Дата поездки</label>
+        <div>
+            <input type="date" placeholder="Дата" name = "data" value="{{ data }}">
+            <span class="error">{{ errors.data }}</span>
+        </div>
+        <div>
+            <button type="submit">Заказать</button>
+        </div>
+    </form>
+{% endblock%}

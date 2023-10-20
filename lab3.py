@@ -47,3 +47,40 @@ def pay():
 @lab3.route('/lab3/success')
 def success():
     return render_template('success.html')
+
+
+@lab3.route('/lab3/buyticket')
+def buyticket():
+    errors = {}
+    user = request.args.get('user')
+    if user == '':
+        errors['user'] = 'Заполните поле!'
+    age = request.args.get('age')
+    if age == '':
+        errors['age'] = 'Заполните поле!'
+    exitt = request.args.get('exitt')
+    if exitt == '':
+        errors['exitt'] = 'Заполните поле!'
+    finish = request.args.get('finish')
+    if finish == '':
+        errors['finish'] = 'Заполните поле!'
+    data = request.args.get('data')
+    if data == '':
+        errors['data'] = 'Заполните поле!'
+    baggage = request.args.get('baggage')
+    polka = request.args.get('polka')
+    tickets = ''
+    ticket = request.args.get('ticket')
+    if ticket == 'child':
+        tickets = 'Детский'
+    else:
+        tickets = 'Взрослый'
+    
+    return render_template('buyticket.html', tickets=tickets, polka=polka, baggage=baggage,
+                            user=user, age=age, exitt=exitt, finish=finish, data=data, errors=errors)
+
+
+@lab3.route('/lab3/final')
+def final():
+    return render_template('final.html')
+
