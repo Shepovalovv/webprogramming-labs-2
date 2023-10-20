@@ -42,3 +42,10 @@ a:hover {
     font-size: large;
 }
 
+.error {
+    color: red;
+}
+
+.error:hover {
+    font-size: large;
+}
