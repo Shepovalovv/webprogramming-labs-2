@@ -49,3 +49,7 @@ a:hover {
 .error:hover {
     font-size: large;
 }
+
+a {
+    text-decoration: none;
+}

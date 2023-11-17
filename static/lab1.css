@@ -40,3 +40,7 @@ a:hover {
     color: rgb(122, 245, 228);
     transition:0.5s 0.5s;
 }
+
+a {
+    text-decoration: none;
+}
