@@ -77,3 +77,37 @@ def grain():
     return render_template("grain_order.html", errors=errors,
                            selected_option=selected_option, weight=weight,
                            zerno=zerno, total=total)
+
+
+@lab4.route('/lab4/cookies', methods=['GET', 'POST'])
+def cookies():
+    errors = {}
+    if request.method == 'GET':
+        return render_template('cookies.html', errors=errors)
+
+    color = request.form.get('color')
+    back = request.form.get('background-color')
+    font = request.form.get('font-size')
+    if color:
+        headers = {
+            'Set-Cookie': 'color=' + color + '; path=/',
+            'Location': '/lab4/cookies'
+        }
+
+    if back:
+        headers = {
+            'Set-Cookie': 'background-color=' + back + '; path=/',
+            'Location': '/lab4/cookies'
+        }
+
+    if font == '':
+        errors['font'] = 'Введите размер шрифта'
+        return render_template('cookies.html', errors=errors)
+
+    elif font:
+        headers = {
+            'Set-Cookie': 'font-size=' + font + 'px; path=/',
+            'Location': '/lab4/cookies'
+        }
+    return '', 303, headers
+
