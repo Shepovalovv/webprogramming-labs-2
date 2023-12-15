@@ -40,7 +40,7 @@ def menu():
             </li>
 
              <li>
-                <a href = '/lab5' target = _blank>Седьмая Лабораторная работа</a>
+                <a href = '/lab7' target = _blank>Седьмая Лабораторная работа</a>
             </li>
         </ul>
 
