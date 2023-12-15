@@ -1,3 +1,7 @@
 from flask import Blueprint, redirect, url_for, render_template, request
-lab5 = Blueprint('lab7', __name__)
+lab7 = Blueprint('lab7', __name__)
+
+@lab7.route('/lab7/')
+def lab():
+    return render_template('lab7/index.html')
 
