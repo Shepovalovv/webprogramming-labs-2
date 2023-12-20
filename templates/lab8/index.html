@@ -42,5 +42,27 @@
         <button onclick="addCourse()">Добавить курс</button>
     </div>
 
-   
+    <div class="modal">
+        <input type="hidden" id="num">
+        <label>
+            Название курса:
+            <input type="text" id="name">
+        </label>
+
+        <label>
+            Количество видеороликов:
+            <input type="number" id="videos" min="0">
+        </label><br>
+
+        <label>
+            Цена:
+            <input type="number" id="price" min="0">
+        </label><br>
+
+            <input type="hidden" id="current-time">
+
+        <button onclick="sendCourse()">OK</button>
+        <button onclick="cancel()">Отмена</button>
+    </div>
 {% endblock %}
+
