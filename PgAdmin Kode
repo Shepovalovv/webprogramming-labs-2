@@ -1,0 +1,61 @@
+--5
+CREATE user artyom_knowledge_base with password '123';
+
+ALTER DATABASE knowledge_base_for_artyom OWNER TO artyom_knowledge_base;
+
+GRANT ALL PRIVILEGES ON DATABASE knowledge_base_for_artyom TO artyom_knowledge_base
+
+CREATE TABLE IF NOT EXISTS users (
+ID SERIAL PRIMARY KEY,
+username VARCHAR(30) UNIQUE NOT NULL,
+password VARCHAR(300) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS articles (
+ID SERIAL PRIMARY KEY,
+user_id INT NOT NULL,
+title VARCHAR(50),
+article_text TEXT,
+is_favorite bool,
+is_public bool,
+likes INT,
+FOREIGN KEY (user_id) REFERENCES USERS (ID)
+);
+
+SELECT * FROM users;
+
+SELECT * FROM articles;
+
+INSERT INTO users(username, password) VALUES('Artyom','horosh');
+INSERT INTO users(username, password) VALUES('Temer','neploh1');
+INSERT INTO users(username, password) VALUES('kirill','jfifty');
+INSERT INTO users(username, password) VALUES('Kadrash','dota2');
+INSERT INTO users(username, password) VALUES('Matvei','roblox');
+
+SELECT users, privilege_type
+FROM information_schema.table_privileges
+WHERE table_name = 'users';
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE users TO artyom_knowledge_base;
+
+GRANT USAGE, SELECT ON SEQUENCE articles_id_seq TO artyom_knowledge_base;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE articles TO artyom_knowledge_base;
+
+ALTER USER artyom_knowledge_base WITH CREATEROLE;
+
+
+
+--6
+
+create user artyom_knowledge_base_orm with password '123'
+create database knowledge_base_orm with owner artyom_knowledge_base_orm;
+
+GRANT ALL PRIVILEGES ON DATABASE knowledge_base_for_artyom TO artyom_knowledge_base
+
+--SELECT usename, usesuper, usecreatedb FROM pg_catalog.pg_user;
+
+--SELECT rolname FROM pg_roles
+
+SELECT SESSION_USER, CURRENT_USER;
+
