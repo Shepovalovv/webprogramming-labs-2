@@ -99,3 +99,12 @@ function sendCourse() {
 }
 
 
+function editCourse(num, course) {
+    document.getElementById('num').value = num;
+    document.getElementById('name').value = course.name;
+    document.getElementById('videos').value = course.videos;
+    document.getElementById('price').value = course.price;
+    document.getElementById('current-time').value = course.date;
+    showModal();
+}
+
