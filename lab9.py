@@ -6,3 +6,6 @@ def lab():
     return render_template('lab9/index.html')
 
 
+@lab9.app_errorhandler(404)
+def not_found(er):
+    return render_template('lab9/error.html')
