@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Базочка</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+    <style>
+        a {
+            position: relative;
+            margin: 0vw 2.5vw 0vw 2.5vw;
+            text-decoration: none;
+            color:blueviolet
+        }
+
+        button {
+            border: 3px solid blueviolet;
+            border-radius: 15px;
+            background-color: black;
+            color: blueviolet;
+        }
+
+        .logout {
+            position: relative;
+        top: 2vw;
+        width: 30vw;
+        height: 12vw;
+        left: 34vw;
+        }
+    </style>
+</head>
+<body>
+    <header style="height: 4vw;">
+        <span style="font-size: 3vw;">База знаний</span>
+        <a href="/lab5/articles_titles">Посмотреть заметки</a>
+        <a href="/lab5/new_article">Создать заметку</a>
+        <button style="position: relative; left: 3vw;" href="">
+            <a href="/lab5/login" target="_self">Логин</a>
+        </button>
+        <button style="color: white; background-color: blueviolet; left: 5vw; position: relative;" href="">
+            <a style="color: white" href="/lab5/register" target="_self">Регистрация</a>
+        </button>
+        <span  style="right: -7vw; position: relative; color:green">{{ username }}</span>
+
+    </header>
+    
+    <main>
+        <button class="logout" style="width: 10vw; height: 5vw; left: 15vw;">
+            <a href="/lab5/favorites">Избранное</a>
+        </button>
+        <button class="logout">
+            <a href="{{ url_for('lab5.logout') }}">Выйти</a>
+        </button>
+        <button class="logout" style="width: 10vw; height: 5vw;">
+            <a href="/lab5/all_articles">Статьи</a>
+        </button>
+    </main>
+    <br>
+    <footer style="position: relative; top: 2vw;">
+        <a style="top: -0.1vw;" class="menu_bt" href="/menu" target="_self">Меню</a> База знаний 
+    </footer>
+    
+</body>
+</html>
+
