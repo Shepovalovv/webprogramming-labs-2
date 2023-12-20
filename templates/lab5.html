@@ -10,22 +10,22 @@
             position: relative;
             margin: 0vw 2.5vw 0vw 2.5vw;
             text-decoration: none;
-            color:blueviolet
+            color: black
         }
 
         button {
-            border: 3px solid blueviolet;
-            border-radius: 15px;
-            background-color: black;
-            color: blueviolet;
+            border: 3px solid rgb(94, 94, 94);
+            border-radius: 10px;
+            background-color: rgb(207, 198, 198);
+            color: black;
         }
 
         .logout {
             position: relative;
-        top: 2vw;
-        width: 30vw;
-        height: 12vw;
-        left: 34vw;
+            top: 2vw;
+            width: 20vw;
+            height: 12vw;
+            left: 20vw;
         }
     </style>
 </head>
@@ -45,13 +45,13 @@
     </header>
     
     <main>
-        <button class="logout" style="width: 10vw; height: 5vw; left: 15vw;">
+        <button class="logout" style="width: 15vw; height: 5vw; left: 15vw;">
             <a href="/lab5/favorites">Избранное</a>
         </button>
         <button class="logout">
             <a href="{{ url_for('lab5.logout') }}">Выйти</a>
         </button>
-        <button class="logout" style="width: 10vw; height: 5vw;">
+        <button class="logout" style="width: 15vw; height: 5vw;  left: 25vw;">
             <a href="/lab5/all_articles">Статьи</a>
         </button>
     </main>
